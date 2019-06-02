@@ -1,10 +1,14 @@
-const express = require('express');
+const express = require("express");
+const keys = require("./configs/keys");
 
 const app = express();
+const passport = require("passport");
+const googleStrategy = require("passport-google-oauth20").Strategy;
 
-app.get('/', (req, res) => {
-  res.send({hi: 'there'})
-})
+//passport.use(new googleStrategy());
+// app.get("/", (req, res) => {
+//   res.send({ hi: "there" });
+// });
 
-const PORT = PROCESS.ENV.PORT || 5000;
-app.listen(PORT)
+const PORT = process.env.PORT || 5000;
+app.listen(PORT);
